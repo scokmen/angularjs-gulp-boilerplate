@@ -1,0 +1,26 @@
+{
+  "name": "angularjs-gulp-boilerplate",
+  "version": "0.0.1",
+  "homepage": "https://github.com/scokmen/angularjs-gulp-boilerplate",
+  "description": "A simple starter angularjs (1.5.x) app with common services and gulp tasks on john papa's style guide.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scokmen/angularjs-gulp-boilerplate.git"
+  },
+  "authors": [
+    "Soner Çökmen <sonercokmen@gmail.com>"
+  ],
+  "keywords": [
+    "angularjs",
+    "gulp",
+    "boilerplate",
+    "starter"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-translate": "^2.11.1",
+    "angularLocalStorage": "ngStorage#^0.3.2",
+    "lodash": "^4.14.1"
+  }
+}
