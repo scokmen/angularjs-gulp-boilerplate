@@ -1,7 +1,13 @@
 (function() {
     'use strict';
 
+    /** @module ng-starter */
     var ngStarter = angular.module('ng-starter', [
+        'ng-starter.services',
+        'ng-starter.main',
+        'ng-starter.header',
+        'ng-starter.footer',
+        'ng-starter.sidemenu',
         'ui.router'
     ]);
 
@@ -11,6 +17,10 @@
 
     /**
      * ng-starter application config.
+     * @param {$stateProvider} $stateProvider
+     * @param {$provide} $provide
+     * @param {$logProvider} $logProvider
+     * @param {$compileProvider} $compileProvider
      */
     function config($stateProvider, $provide, $logProvider, $compileProvider) {
 
@@ -23,14 +33,15 @@
         //Register the exception handler.
         $provide.decorator('$exceptionHandler', exceptionHandler);
 
-        //Register states.
+        //Register the abstract states.
         registerStates($stateProvider);
     }
 
     registerStates.$inject = ['$stateProvider'];
 
     /**
-     * Register the application-wide states.
+     * Register the abstract application-wide states.
+     * @param {$stateProvider} $stateProvider
      */
     function registerStates($stateProvider) {
         $stateProvider
@@ -65,10 +76,13 @@
 
     /**
      * Angularjs global exception handler.
+     * @param {$delegate} $delegate
      */
     function exceptionHandler($delegate) {
         return function(exception, cause) {
+
             //TODO: Handle exception here in your way.
+
         };
     }
 })();
