@@ -26,13 +26,12 @@
          * @param {object} [data]
          * @returns {promise}
          */
-        function call(method, url, data, ) {
+        function call(method, url, data) {
 
             var deferred = $q.defer();
 
             $http({
                 method: method,
-                url: url,
                 url: url,
                 data: data
             }).then(function(successResponse) {
