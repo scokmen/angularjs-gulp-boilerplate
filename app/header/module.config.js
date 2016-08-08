@@ -1,7 +1,8 @@
+/** @namespace ng-starter.header */
+
 (function() {
     'use strict';
 
-    /** @module ng-starter.header */
     angular.module('ng-starter.header', []);
 
 })();

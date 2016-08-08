@@ -1,7 +1,8 @@
+/** @namespace ng-starter.sidemenu */
+
 (function () {
     'use strict';
 
-    /** @module ng-starter.sidemenu */
     angular.module('ng-starter.sidemenu', []);
 
 })();

@@ -17,6 +17,12 @@
     "boilerplate",
     "starter"
   ],
+  "scripts": {
+    "development": "gulp build:dev",
+    "production": "gulp build:prod",
+    "test": "gulp test",
+    "documentation": "gulp documentation"
+  },
   "devDependencies": {
     "bower-files": "^3.13.3",
     "browser-sync": "^2.14.0",
@@ -26,6 +32,7 @@
     "gulp-angular-templatecache": "^2.0.0",
     "gulp-concat": "^2.6.0",
     "gulp-inject": "^4.1.0",
+    "gulp-jsdoc": "^0.1.5",
     "gulp-jshint": "^2.0.1",
     "gulp-shell": "^0.5.2",
     "gulp-strip-debug": "^1.1.0",

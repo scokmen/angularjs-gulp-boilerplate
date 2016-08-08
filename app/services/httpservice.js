@@ -9,6 +9,7 @@
      * Abstraction for angular $http service.
      * @class
      * @classdesc Abstraction for angular $http service for improve controls over http calls.
+     * @memberOf ng-starter.services
      */
     function httpService($q, $http) {
 
@@ -16,15 +17,17 @@
             get: get,
             post: post,
             put: put,
-            del: del
+            del: del,
+            join: join
         };
 
         /**
          * Send a http request over the wrapped angular $http service.
          * @param {string} method
          * @param {string} url
-         * @param {object} [data]
-         * @returns {promise}
+         * @param {Object} [data]
+         * @returns {Promise}
+         * @private
          */
         function call(method, url, data) {
 
@@ -47,8 +50,9 @@
         /**
          * Send http get request to given url with data.
          * @param {string} url
-         * @param {object} [data]
-         * @returns {promise}
+         * @param {Object} [data]
+         * @returns {Promise}
+         * @public
          */
         function get(url, data) {
             return call('GET', url, data);
@@ -57,8 +61,9 @@
         /**
          * Send http post request to given url with data.
          * @param {string} url
-         * @param {object} [data]
-         * @returns {promise}
+         * @param {Object} [data]
+         * @returns {Promise}
+         * @public
          */
         function post(url, data) {
             return call('POST', url, data);
@@ -67,8 +72,9 @@
         /**
          * Send http put request to given url with data.
          * @param {string} url
-         * @param {object} [data]
-         * @returns {promise}
+         * @param {Object} [data]
+         * @returns {Promise}
+         * @public
          */
         function put(url, data) {
             return call('PUT', url, data);
@@ -77,8 +83,9 @@
         /**
          * Send http delete request to given url with data.
          * @param {string} url
-         * @param {object} [data]
-         * @returns {promise}
+         * @param {Object} [data]
+         * @returns {Promise}
+         * @public
          */
         function del(url, data) {
             return call('DELETE', url, data);
@@ -88,6 +95,7 @@
          * Build a url from given array.
          * @param {string[]} paths
          * @returns {string}
+         * @public
          */
         function join(paths) {
             var cleanPaths = _.map(paths,
