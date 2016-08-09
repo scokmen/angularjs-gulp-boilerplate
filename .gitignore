@@ -7,9 +7,8 @@ bower_components
 # WebStorm project folder
 .idea
 
-# Documentations folder
+# Documentation folder
 doc
 
 # Distribution folder.
 www
-

@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     'use strict';
 
     angular.module('ng-starter').controller('ApplicationController', ApplicationController);
@@ -9,6 +9,9 @@
      * ApplicationController
      * @class
      * @classdesc Controller method of 'ng-starter' application.
+     * @memberOf ng-starter
      */
-    function ApplicationController() {}
+    function ApplicationController() {
+    }
+    
 })();

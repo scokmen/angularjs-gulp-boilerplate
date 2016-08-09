@@ -1,7 +1,8 @@
+/** @namespace ng-starter */
+
 (function() {
     'use strict';
 
-    /** @module ng-starter */
     var ngStarter = angular.module('ng-starter', [
         'ng-starter.services',
         'ng-starter.main',
@@ -72,7 +73,7 @@
             });
     }
 
-    extendExceptionHandler.$inject = ['$delegate'];
+    exceptionHandler.$inject = ['$delegate'];
 
     /**
      * Angularjs global exception handler.
@@ -82,7 +83,6 @@
         return function(exception, cause) {
 
             //TODO: Handle exception here in your way.
-
         };
     }
 })();
