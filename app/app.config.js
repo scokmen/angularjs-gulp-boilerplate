@@ -1,14 +1,14 @@
-/** @namespace ng-starter */
-
-(function() {
+(function () {
     'use strict';
 
+    /** @namespace ng-starter */
     var ngStarter = angular.module('ng-starter', [
         'ng-starter.services',
         'ng-starter.main',
         'ng-starter.header',
         'ng-starter.footer',
         'ng-starter.sidemenu',
+        'ng-starter.home',
         'ui.router'
     ]);
 
@@ -73,16 +73,15 @@
             });
     }
 
-    exceptionHandler.$inject = ['$delegate'];
+    exceptionHandler.$inject = ['exceptionService'];
 
     /**
-     * Angularjs global exception handler.
-     * @param {$delegate} $delegate
+     * Angular global exception handler.
+     * @param {exceptionService} exceptionService
      */
-    function exceptionHandler($delegate) {
-        return function(exception, cause) {
-
-            //TODO: Handle exception here in your way.
+    function exceptionHandler(exceptionService) {
+        return function (exception, cause) {
+            exceptionService.handle(exception, cause);
         };
     }
 })();
