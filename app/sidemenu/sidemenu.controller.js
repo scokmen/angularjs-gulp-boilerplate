@@ -11,7 +11,7 @@
      * @classdesc Controller method of 'ng-starter.sidemenu' module.
      * @memberOf ng-starter.sidemenu
      */
-    function SideMenuController($rootScope) {
+    function SideMenuController() {
     }
 
 })();

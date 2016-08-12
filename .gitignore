@@ -10,5 +10,8 @@ bower_components
 # Documentation folder
 doc
 
+# Report folder
+report
+
 # Distribution folder.
 www

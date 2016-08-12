@@ -12,7 +12,6 @@
      * @memberOf ng-starter.index
      */
     function HomeController() {
-        console.log('HOME');
     }
 
 })();

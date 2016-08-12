@@ -16,6 +16,8 @@
   "strict": true,
   "expr": true,
   "globals": {
+    "console": false,
+    "alert": false,
     "angular": false,
     "_": false
   },

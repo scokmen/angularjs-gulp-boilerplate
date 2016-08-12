@@ -12,7 +12,6 @@
      * @memberOf ng-starter
      */
     function ApplicationController() {
-        console.log('APP');
     }
     
 })();

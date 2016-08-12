@@ -14,7 +14,7 @@
 
     ngStarter.config(config);
 
-    config.$inject = ['$stateProvider', '$provide', '$logProvider', '$compileProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$provide', '$logProvider', '$compileProvider'];
 
     /**
      * ng-starter application config.

@@ -12,6 +12,6 @@
      * @memberOf ng-starter.main
      */
     function MainController() {
-        console.log('MAIN');
     }
+
 })();

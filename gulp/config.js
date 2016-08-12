@@ -8,6 +8,7 @@ var paths = {
     app: './app/',
     www: './www/',
     doc: './doc',
+    report: './report',
     view: './index.html'
 };
 
@@ -51,6 +52,14 @@ exports.getDist = function () {
  */
 exports.getDoc = function () {
     return path.join(paths.doc);
+};
+
+/**
+ * Get the report folder.
+ * @returns {string}
+ */
+exports.getReport = function () {
+    return path.join(paths.report);
 };
 
 /**
