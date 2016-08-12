@@ -8,7 +8,7 @@
         'ng-starter.header',
         'ng-starter.footer',
         'ng-starter.sidemenu',
-        'ng-starter.home',
+        'ng-starter.index',
         'ui.router'
     ]);
 
@@ -19,11 +19,12 @@
     /**
      * ng-starter application config.
      * @param {$stateProvider} $stateProvider
+     * @param {$urlRouterProvider} $urlRouterProvider
      * @param {$provide} $provide
      * @param {$logProvider} $logProvider
      * @param {$compileProvider} $compileProvider
      */
-    function config($stateProvider, $provide, $logProvider, $compileProvider) {
+    function config($stateProvider, $urlRouterProvider, $provide, $logProvider, $compileProvider) {
 
         //Disable the log messages.
         $logProvider.debugEnabled(false);
@@ -35,42 +36,45 @@
         $provide.decorator('$exceptionHandler', exceptionHandler);
 
         //Register the abstract states.
-        registerStates($stateProvider);
+        registerStates($stateProvider, $urlRouterProvider);
     }
 
-    registerStates.$inject = ['$stateProvider'];
+    registerStates.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     /**
      * Register the abstract application-wide states.
      * @param {$stateProvider} $stateProvider
+     * @param {$urlRouterProvider} $urlRouterProvider
      */
-    function registerStates($stateProvider) {
+    function registerStates($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('ngstarter', {
                 abstract: true,
                 views: {
                     '': {
                         controller: 'MainController',
-                        templateUrl: '/app/main/index.html',
+                        templateUrl: '/app/main/main.html',
                         controllerAs: 'vm'
                     },
                     'header@ngstarter': {
                         controller: 'HeaderController',
-                        templateUrl: '/app/header/index.html',
+                        templateUrl: '/app/header/header.html',
                         controllerAs: 'vm'
                     },
                     'footer@ngstarter': {
                         controller: 'FooterController',
-                        templateUrl: '/app/footer/index.html',
+                        templateUrl: '/app/footer/footer.html',
                         controllerAs: 'vm'
                     },
                     'sidemenu@ngstarter': {
                         controller: 'SideMenuController',
-                        templateUrl: '/app/sidemenu/index.html',
+                        templateUrl: '/app/sidemenu/sidemenu.html',
                         controllerAs: 'vm'
                     }
                 }
             });
+
+        $urlRouterProvider.otherwise('/index');
     }
 
     exceptionHandler.$inject = ['exceptionService'];

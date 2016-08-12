@@ -24,7 +24,8 @@
          * @public
          */
         function handle(exception, cause){
-            //TODO: Handle the exception here...
+            //TODO: Override with your own exception handling mechanism...
+            console.error(exception.message, cause);
         }
     }
 })();
