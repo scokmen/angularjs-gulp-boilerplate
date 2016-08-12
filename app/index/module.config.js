@@ -4,19 +4,21 @@
     /** @namespace ng-starter.index */
     var index = angular.module('ng-starter.index', [
         'ng-starter.services',
+        'ng-starter.vendor',
         'ui.router'
     ]);
 
     index.config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$translatePartialLoaderProvider'];
 
     /**
-     * ng-starter.index application config.
+     * ng-starter.index config function.
      * @param {$stateProvider} $stateProvider
      * @param {$urlRouterProvider} $urlRouterProvider
+     * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
-    function config($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider, $translatePartialLoaderProvider) {
         $stateProvider
             .state('ngstarter.index', {
                 abstract: true,
@@ -40,7 +42,10 @@
                 }
             });
 
+        //Default url.
         $urlRouterProvider.otherwise('/index/home');
+
+        $translatePartialLoaderProvider.addPart('index');
     }
 
 })();

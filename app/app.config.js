@@ -8,23 +8,25 @@
         'ng-starter.header',
         'ng-starter.footer',
         'ng-starter.sidemenu',
+        'ng-starter.vendor',
         'ng-starter.index',
         'ui.router'
     ]);
 
     ngStarter.config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$provide', '$logProvider', '$compileProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$translateProvider', '$provide', '$logProvider', '$compileProvider'];
 
     /**
      * ng-starter application config.
      * @param {$stateProvider} $stateProvider
      * @param {$urlRouterProvider} $urlRouterProvider
+     * @param {$translateProvider} $translateProvider
      * @param {$provide} $provide
      * @param {$logProvider} $logProvider
      * @param {$compileProvider} $compileProvider
      */
-    function config($stateProvider, $urlRouterProvider, $provide, $logProvider, $compileProvider) {
+    function config($stateProvider, $urlRouterProvider, $translateProvider, $provide, $logProvider, $compileProvider) {
 
         //Disable the log messages.
         $logProvider.debugEnabled(false);
@@ -37,6 +39,10 @@
 
         //Register the abstract states.
         registerStates($stateProvider, $urlRouterProvider);
+
+        //Register translations.
+        $translateProvider.useLoader('$translatePartialLoader', {urlTemplate: 'app/{part}/localizations/{lang}.json'});
+        $translateProvider.preferredLanguage('en-US');
     }
 
     registerStates.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -74,6 +80,7 @@
                 }
             });
 
+        //Default url.
         $urlRouterProvider.otherwise('/index');
     }
 

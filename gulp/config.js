@@ -8,7 +8,7 @@ var paths = {
     app: './app/',
     www: './www/',
     doc: './doc',
-    report: './report',
+    report: './report/jshint.html',
     view: './index.html'
 };
 
@@ -55,7 +55,7 @@ exports.getDoc = function () {
 };
 
 /**
- * Get the report folder.
+ * Get the report file.
  * @returns {string}
  */
 exports.getReport = function () {
