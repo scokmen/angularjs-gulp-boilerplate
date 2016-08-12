@@ -9,8 +9,7 @@
         'ng-starter.footer',
         'ng-starter.sidemenu',
         'ng-starter.vendor',
-        'ng-starter.index',
-        'ui.router'
+        'ng-starter.index'
     ]);
 
     ngStarter.config(config);

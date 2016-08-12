@@ -4,8 +4,7 @@
     /** @namespace ng-starter.index */
     var index = angular.module('ng-starter.index', [
         'ng-starter.services',
-        'ng-starter.vendor',
-        'ui.router'
+        'ng-starter.vendor'
     ]);
 
     index.config(config);
