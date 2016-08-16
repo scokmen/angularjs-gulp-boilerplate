@@ -80,7 +80,7 @@
             });
 
         //Default url.
-        $urlRouterProvider.otherwise('/index');
+        $urlRouterProvider.otherwise('/index/home');
     }
 
     exceptionHandler.$inject = ['exceptionService'];

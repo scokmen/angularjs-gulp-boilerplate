@@ -9,15 +9,14 @@
 
     index.config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$translatePartialLoaderProvider'];
+    config.$inject = ['$stateProvider', '$translatePartialLoaderProvider'];
 
     /**
      * ng-starter.index config function.
      * @param {$stateProvider} $stateProvider
-     * @param {$urlRouterProvider} $urlRouterProvider
      * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
-    function config($stateProvider, $urlRouterProvider, $translatePartialLoaderProvider) {
+    function config($stateProvider, $translatePartialLoaderProvider) {
         $stateProvider
             .state('ngstarter.index', {
                 abstract: true,
@@ -41,7 +40,7 @@
                 }
             })
             .state('ngstarter.index.contact', {
-                url: '/home',
+                url: '/contact',
                 views: {
                     'index': {
                         controller: 'ContactController',
@@ -50,9 +49,6 @@
                     }
                 }
             });
-
-        //Default url.
-        $urlRouterProvider.otherwise('/index/home');
 
         $translatePartialLoaderProvider.addPart('index');
     }
