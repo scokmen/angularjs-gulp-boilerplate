@@ -7,10 +7,10 @@ var config = require('./config');
 
 //Clean the distribution folder.
 gulp.task('clean:dev', function () {
-    del.sync(config.getDist(), {dryRun: true});
+    del(config.getDist());
 });
 
 //Build application in the development mode.
-gulp.task('build:dev', function (cb) {
-    runSequence('clean:dev', 'vendors:dev', 'scripts:dev', 'styles:dev', cb);
+gulp.task('build:dev', ['clean:dev'], function (cb) {
+    runSequence('vendors:dev', 'scripts:dev', 'styles:dev', cb);
 });
