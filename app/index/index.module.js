@@ -39,6 +39,16 @@
                         controllerAs: 'vm'
                     }
                 }
+            })
+            .state('ngstarter.index.contact', {
+                url: '/home',
+                views: {
+                    'index': {
+                        controller: 'ContactController',
+                        templateUrl: '/app/index/components/contact/contact.html',
+                        controllerAs: 'vm'
+                    }
+                }
             });
 
         //Default url.

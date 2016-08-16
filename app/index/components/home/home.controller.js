@@ -8,7 +8,7 @@
     /**
      * HomeController
      * @class
-     * @classdesc Controller method of 'ng-starter.index' index component.
+     * @classdesc Controller method of 'ng-starter.index' home component.
      * @memberOf ng-starter.index
      */
     function HomeController() {

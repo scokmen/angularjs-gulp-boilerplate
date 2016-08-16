@@ -4,10 +4,10 @@ A simple starter angularjs (1.5.x) app with common services and gulp tasks on jo
 ### Features
 - Well documented code
 - Folder by feature structure
-- Module based styling
+- Module based styling with LESS
 - Module based localization
 - [Jasmine](http://jasmine.github.io/) & [Karma](https://karma-runner.github.io/1.0/index.html) tests.
-- Some helper services (`exceptionService`, `loggerService`, `storageService`)
+- Some useful services (`exceptionService`, `loggerService`, `httpService`)
 - Development build
 - Optimized production build
 - [JsDoc](http://usejsdoc.org/) documentation
