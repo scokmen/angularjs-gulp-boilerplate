@@ -16,3 +16,16 @@ gulp.task('server:dev', function () {
         }
     });
 });
+
+//Start browserSync server in production mode.
+gulp.task('server:prod', function () {
+
+    browserSync.instance = browserSync.init({
+        startPath: '/',
+        browser: 'default',
+        server: {
+            baseDir: [config.getDist()],
+            routes: {}
+        }
+    });
+});

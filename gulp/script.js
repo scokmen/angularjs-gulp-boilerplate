@@ -36,8 +36,8 @@ gulp.task('scripts:prod:minify', function () {
 gulp.task('templatecache:prod', function () {
 
     var templateCacheOptions = {
-        module: 'ngstarter.templates',
-        standalone: true,
+        module: 'ng-starter.templates',
+        standalone: false,
         filename: 'templates.min.js',
         root: '/app'
     };

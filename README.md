@@ -23,6 +23,7 @@ $ gulp server:dev
 ### Production build
 ```sh
 $ gulp build:prod (or "npm run production")
+$ gulp server:prod
 ```
 
 ### JsDoc documentation

@@ -11,6 +11,6 @@ gulp.task('clean:dev', function () {
 });
 
 //Build application in the development mode.
-gulp.task('build:dev', ['clean:dev'], function (cb) {
-    runSequence('vendors:dev', 'scripts:dev', 'styles:dev', cb);
+gulp.task('build:dev', function (cb) {
+    runSequence('clean:dev', 'vendors:dev', 'scripts:dev', 'styles:dev', cb);
 });
