@@ -1,6 +1,8 @@
 # angularjs-gulp-boilerplate
 A simple starter angularjs (1.5.x) app with common services and gulp tasks on john papa's style guide.
 
+[![Build Status](https://travis-ci.org/scokmen/angularjs-gulp-boilerplate.svg?branch=master)](https://travis-ci.org/scokmen/angularjs-gulp-boilerplate)
+
 ### Features
 - Well documented code
 - Folder by feature structure
