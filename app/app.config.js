@@ -25,7 +25,7 @@
      * @param {$logProvider} $logProvider
      * @param {$compileProvider} $compileProvider
      */
-    function config($stateProvider, $urlRouterProvider, $translateProvider, $provide, $logProvider, $compileProvider, unnecessaryParamForCITesting) {
+    function config($stateProvider, $urlRouterProvider, $translateProvider, $provide, $logProvider, $compileProvider) {
 
         //Disable the log messages.
         $logProvider.debugEnabled(false);
