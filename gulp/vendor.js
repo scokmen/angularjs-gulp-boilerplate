@@ -16,30 +16,30 @@ gulp.task('vendors:dev', function () {
         addSuffix: '?v=' + new Date().getTime()
     };
 
-    return gulp.src(config.getView())
+    return gulp.src(config.getViewPath())
         .pipe(inject(gulp.src(bowerFiles.ext('js').files), injectOptions))
-        .pipe(gulp.dest(config.getRoot()));
+        .pipe(gulp.dest(config.getRootPath()));
 });
 
-//Minify the bower files.
-gulp.task('vendors:prod:minify', function () {
+//Bundle the bower files.
+gulp.task('vendors:prod:bundle', function () {
 
     return gulp.src(bowerFiles.ext('js').files)
         .pipe(uglify())
         .pipe(concat('vendors.min.js'))
-        .pipe(gulp.dest(config.getDist()));
+        .pipe(gulp.dest(config.getDistPath()));
 });
 
-//Inject vendors.js into the html.
-gulp.task('vendors:prod', ['vendors:prod:minify'], function () {
+//Inject the bundled js file into the html.
+gulp.task('vendors:prod', ['vendors:prod:bundle'], function () {
 
     var injectOptions = {
         name: 'vendors',
         addSuffix: '?v=' + new Date().getTime(),
-        ignorePath: '/' + config.getDist()
+        ignorePath: '/' + config.getDistPath()
     };
 
-    return gulp.src(path.join(config.getDist(), 'index.html'))
-        .pipe(inject(gulp.src(path.join(config.getDist(), 'vendors.min.js')), injectOptions))
-        .pipe(gulp.dest(config.getDist()));
+    return gulp.src(path.join(config.getDistPath(), 'index.html'))
+        .pipe(inject(gulp.src(path.join(config.getDistPath(), 'vendors.min.js')), injectOptions))
+        .pipe(gulp.dest(config.getDistPath()));
 });

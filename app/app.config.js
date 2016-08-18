@@ -1,12 +1,8 @@
 (function () {
     'use strict';
 
-    //Dummy templates module.
-    angular.module('ng-starter.templates', []);
-
     /** @namespace ng-starter */
     var ngStarter = angular.module('ng-starter', [
-        'ng-starter.templates',
         'ng-starter.services',
         'ng-starter.main',
         'ng-starter.header',

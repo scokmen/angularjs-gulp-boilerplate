@@ -26,7 +26,7 @@ exports.appFiles = function (extension, recursive) {
  * Get the root folder.
  * @returns {string}
  */
-exports.getRoot = function () {
+exports.getRootPath = function () {
     return path.join(paths.root);
 };
 
@@ -34,7 +34,7 @@ exports.getRoot = function () {
  * Get the application folder.
  * @returns {string}
  */
-exports.getApp = function () {
+exports.getAppPath = function () {
     return path.join(paths.app);
 };
 
@@ -42,7 +42,7 @@ exports.getApp = function () {
  * Get the distribution folder.
  * @returns {string}
  */
-exports.getDist = function () {
+exports.getDistPath = function () {
     return path.join(paths.www);
 };
 
@@ -50,7 +50,7 @@ exports.getDist = function () {
  * Get the documentation folder.
  * @returns {string}
  */
-exports.getDoc = function () {
+exports.getDocPath = function () {
     return path.join(paths.doc);
 };
 
@@ -58,7 +58,7 @@ exports.getDoc = function () {
  * Get the report file.
  * @returns {string}
  */
-exports.getReport = function () {
+exports.getReportPath = function () {
     return path.join(paths.report);
 };
 
@@ -66,6 +66,6 @@ exports.getReport = function () {
  * Get the main view.
  * @return {string}
  */
-exports.getView = function () {
+exports.getViewPath = function () {
     return path.join(paths.view);
 };

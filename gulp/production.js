@@ -8,18 +8,19 @@ var config = require('./config');
 
 //Clean the distribution folder.
 gulp.task('clean:prod', function () {
-    del(config.getDist());
+    del.sync(config.getDistPath());
 });
 
-//Copy html to distibution folder.
+//Copy html to distribution folder.
 gulp.task('html:prod', function () {
-    return gulp.src(config.getView())
-        .pipe(gulp.dest(config.getDist(), {overwrite: true}));
+    return gulp.src(config.getViewPath())
+        .pipe(gulp.dest(config.getDistPath()));
 });
 
+//Copy the localizations to distribution folder.
 gulp.task('localizations:prod', function () {
     return gulp.src(config.appFiles('json', true))
-        .pipe(gulp.dest(path.join(config.getDist(), 'app')));
+        .pipe(gulp.dest(path.join(config.getDistPath(), 'app')));
 });
 
 //Build application in the production mode.

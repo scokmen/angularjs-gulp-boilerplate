@@ -11,7 +11,7 @@ gulp.task('server:dev', function () {
         startPath: '/',
         browser: 'default',
         server: {
-            baseDir: [config.getRoot()],
+            baseDir: [config.getRootPath()],
             routes: { }
         }
     });
@@ -24,7 +24,7 @@ gulp.task('server:prod', function () {
         startPath: '/',
         browser: 'default',
         server: {
-            baseDir: [config.getDist()],
+            baseDir: [config.getDistPath()],
             routes: {}
         }
     });

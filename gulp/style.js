@@ -7,12 +7,12 @@ var inject = require('gulp-inject');
 var concatCss = require('gulp-concat-css');
 var config = require('./config');
 
-//Compile LESS files and inject to html file.
+//Compile LESS files.
 gulp.task('styles:dev:compile', function () {
 
     return gulp.src(config.appFiles('less', true))
         .pipe(less())
-        .pipe(gulp.dest(config.getDist()));
+        .pipe(gulp.dest(config.getDistPath()));
 });
 
 //Inject compiled styles into the html file.
@@ -23,31 +23,31 @@ gulp.task('styles:dev', ['styles:dev:compile'], function () {
         addSuffix: '?v=' + new Date().getTime()
     };
 
-    var styles = gulp.src(path.join(config.getDist(), '/**/*.css'));
-    return gulp.src(config.getView())
+    var styles = gulp.src(path.join(config.getDistPath(), '/**/*.css'));
+    return gulp.src(config.getViewPath())
         .pipe(inject(styles, injectOptions))
-        .pipe(gulp.dest(config.getRoot()));
+        .pipe(gulp.dest(config.getRootPath()));
 });
 
-//Compile LESS files into the single css file.
+//Compile and bundle LESS files.
 gulp.task('styles:prod:compile', function () {
 
     return gulp.src(config.appFiles('less', true))
         .pipe(less({compress: true}))
         .pipe(concatCss('style.min.css'))
-        .pipe(gulp.dest(config.getDist()));
+        .pipe(gulp.dest(config.getDistPath()));
 });
 
-//Inject the compiled style.min.css into the html file.
+//Inject the bundled css file into the html file.
 gulp.task('styles:prod', ['styles:prod:compile'], function () {
 
     var injectOptions = {
         name: 'styles',
         addSuffix: '?v=' + new Date().getTime(),
-        ignorePath: '/' + config.getDist()
+        ignorePath: '/' + config.getDistPath()
     };
 
-    return gulp.src(path.join(config.getDist(), 'index.html'))
-        .pipe(inject(gulp.src(path.join(config.getDist(), 'style.min.css')), injectOptions))
-        .pipe(gulp.dest(config.getRoot()));
+    return gulp.src(path.join(config.getDistPath(), 'index.html'))
+        .pipe(inject(gulp.src(path.join(config.getDistPath(), 'style.min.css')), injectOptions))
+        .pipe(gulp.dest(config.getRootPath()));
 });

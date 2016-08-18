@@ -7,7 +7,7 @@ var config = require('./config');
 
 //Clean the distribution folder.
 gulp.task('clean:dev', function () {
-    del(config.getDist());
+    del.sync(config.getDistPath());
 });
 
 //Build application in the development mode.

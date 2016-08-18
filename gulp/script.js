@@ -5,11 +5,12 @@ var inject = require('gulp-inject');
 var concat = require('gulp-concat');
 var path = require('path');
 var uglify = require('gulp-uglify');
+var stripDebug = require('gulp-strip-debug');
 var angularFilesort = require('gulp-angular-filesort');
 var templateCache = require('gulp-angular-templatecache');
 var config = require('./config');
 
-//Inject the app files into the html.
+//Inject the application files into the html file.
 gulp.task('scripts:dev', function () {
 
     var injectOptions = {
@@ -18,25 +19,26 @@ gulp.task('scripts:dev', function () {
     };
 
     var scripts = gulp.src(config.appFiles('js', true)).pipe(angularFilesort());
-    return gulp.src(config.getView())
+    return gulp.src(config.getViewPath())
         .pipe(inject(scripts, injectOptions))
-        .pipe(gulp.dest(config.getRoot()));
+        .pipe(gulp.dest(config.getRootPath()));
 });
 
-//Minify the app files.
-gulp.task('scripts:prod:minify', function () {
+//Bundle the application files.
+gulp.task('scripts:prod:bundle:js', function () {
     return gulp.src(config.appFiles('js', true))
         .pipe(angularFilesort())
         .pipe(concat('app.min.js'))
+        .pipe(stripDebug())
         .pipe(uglify())
-        .pipe(gulp.dest(config.getDist()));
+        .pipe(gulp.dest(config.getDistPath()));
 });
 
-//Angular templatecache.
-gulp.task('templatecache:prod', function () {
+//Bundle the template files.
+gulp.task('scripts:prod:bundle:html', function () {
 
     var templateCacheOptions = {
-        module: 'ng-starter.templates',
+        module: 'ng-starter',
         standalone: false,
         filename: 'templates.min.js',
         root: '/app'
@@ -44,22 +46,23 @@ gulp.task('templatecache:prod', function () {
 
     return gulp.src(config.appFiles('html', true))
         .pipe(templateCache(templateCacheOptions))
+        .pipe(stripDebug())
         .pipe(uglify())
-        .pipe(gulp.dest(config.getDist()));
+        .pipe(gulp.dest(config.getDistPath()));
 });
 
-//Inject the minified app fle into the html.
-gulp.task('scripts:prod', ['scripts:prod:minify', 'templatecache:prod'], function () {
+//Inject the js and html bundles into the html file.
+gulp.task('scripts:prod', ['scripts:prod:bundle:js', 'scripts:prod:bundle:html'], function () {
 
     var injectOptions = {
         name: 'app',
         addSuffix: '?v=' + new Date().getTime(),
-        ignorePath: '/' + config.getDist()
+        ignorePath: '/' + config.getDistPath()
     };
 
-    var injectFiles = [path.join(config.getDist(), 'app.min.js'), path.join(config.getDist(), 'templates.min.js')];
+    var injectFiles = [path.join(config.getDistPath(), 'app.min.js'), path.join(config.getDistPath(), 'templates.min.js')];
 
-    return gulp.src(path.join(config.getDist(), 'index.html'))
+    return gulp.src(path.join(config.getDistPath(), 'index.html'))
         .pipe(inject(gulp.src(injectFiles), injectOptions))
-        .pipe(gulp.dest(config.getDist()));
+        .pipe(gulp.dest(config.getDistPath()));
 });

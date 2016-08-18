@@ -18,6 +18,7 @@
     "starter"
   ],
   "dependencies": {
+    "jquery": "^3.1.0",
     "angular": "^1.5.8",
     "angular-translate": "^2.11.1",
     "angularLocalStorage": "ngStorage#^0.3.2",
