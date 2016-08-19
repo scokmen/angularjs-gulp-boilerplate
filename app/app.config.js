@@ -4,6 +4,7 @@
     /** @namespace ng-starter */
     var ngStarter = angular.module('ng-starter', [
         'ng-starter.services',
+        'ng-starter.directives',
         'ng-starter.main',
         'ng-starter.header',
         'ng-starter.footer',

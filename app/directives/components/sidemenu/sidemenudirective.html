@@ -1,0 +1,20 @@
+<a id="menu-toggle" ng-click="vm.toggleSideMenu()" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i>{{'MENU_BUTTON'
+    | translate}}</a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <a id="menu-close" ng-click="vm.toggleSideMenu()" class="btn btn-light btn-lg pull-right toggle"><i
+                class="fa fa-times"></i></a>
+        <li class="sidebar-brand">
+            <a ui-sref="ngstarter.index.home" ng-click="vm.toggleSideMenu()">{{'MENU_TITLE' | translate}}</a>
+        </li>
+        <li>
+            <a ui-sref="ngstarter.index.home" ng-click="vm.toggleSideMenu()">{{'HOME_LINK' | translate}}</a>
+        </li>
+        <li>
+            <a ui-sref="ngstarter.index.contact" ng-click="vm.toggleSideMenu()">{{'CONTACT_LINK' | translate}}</a>
+        </li>
+        <li>
+            <a ng-click="vm.toggleLanguage()">{{'OTHER_LANGUAGE' | translate}}</a>
+        </li>
+    </ul>
+</nav>

@@ -14,6 +14,7 @@ A simple starter angularjs (1.5.x) app with common services and gulp tasks on jo
 - [JsDoc](http://usejsdoc.org/) documentation
 - [BrowserSync](https://www.browsersync.io/) integration
 - [JsHint](http://jshint.com/) integration
+- Simple dummy bootstrap template included
 
 ### Development build
 ```sh
