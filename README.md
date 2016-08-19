@@ -1,6 +1,8 @@
 # angularjs-gulp-boilerplate
 A simple starter angularjs (1.5.x) app with common services and gulp tasks on john papa's style guide.
 
+[![npm version](https://badge.fury.io/js/angularjs-gulp-boilerplate.svg)](http://badge.fury.io/js/angularjs-gulp-boilerplate)
+[![Bower version](https://badge.fury.io/bo/angularjs-gulp-boilerplate.svg)](http://badge.fury.io/bo/angularjs-gulp-boilerplate)
 [![Build Status](https://travis-ci.org/scokmen/angularjs-gulp-boilerplate.svg?branch=master)](https://travis-ci.org/scokmen/angularjs-gulp-boilerplate)
 
 ### Features
@@ -15,6 +17,15 @@ A simple starter angularjs (1.5.x) app with common services and gulp tasks on jo
 - [BrowserSync](https://www.browsersync.io/) integration
 - [JsHint](http://jshint.com/) integration
 - Simple dummy bootstrap template included
+
+### Download via Npm
+```sh
+$ npm install angularjs-gulp-boilerplate
+```
+### Download via Bower
+```sh
+$ bower install angularjs-gulp-boilerplate
+```
 
 ### Development build
 ```sh

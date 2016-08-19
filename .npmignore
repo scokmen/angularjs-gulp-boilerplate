@@ -12,3 +12,8 @@ CVS
 npm-debug.log
 bower.json
 .bowerrc
+bower_components
+www
+doc
+report
+.idea
