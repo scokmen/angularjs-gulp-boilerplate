@@ -7,7 +7,7 @@ A simple starter angularjs (1.5.x) app with common services and gulp tasks on jo
 - Well documented code
 - Folder by feature structure
 - Module based styling with LESS
-- Module based localization
+- Module based localization (English and Turkish)
 - Some useful services (`exceptionService`, `loggerService`, `httpService`)
 - Development build
 - Optimized production build

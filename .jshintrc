@@ -9,6 +9,7 @@
   "latedef": false,
   "newcap": true,
   "noarg": true,
+  "validthis": true,
   "quotmark": false,
   "regexp": true,
   "undef": true,

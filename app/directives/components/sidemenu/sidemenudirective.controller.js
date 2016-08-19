@@ -19,8 +19,10 @@
 
     /**
      * <side-menu> directive controller.
+     * @class
+     * @classdesc <side-menu> directive controller.
      * @param {$translate} $translate
-     * @memberOf ng-starter.components
+     * @memberOf ng-starter.directives
      */
     function sideMenuDirectiveController($translate) {
         var vm = this;
