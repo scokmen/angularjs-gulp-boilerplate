@@ -15,8 +15,6 @@
         };
     }
 
-    sideMenuDirectiveController.$inject = ['$translate'];
-
     /**
      * <side-menu> directive controller.
      * @class
@@ -24,6 +22,7 @@
      * @param {$translate} $translate
      * @memberOf ng-starter.directives
      */
+    /* @ngInject */
     function sideMenuDirectiveController($translate) {
         var vm = this;
 

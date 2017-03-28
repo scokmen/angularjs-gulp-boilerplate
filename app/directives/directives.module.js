@@ -10,12 +10,11 @@
 
     directives.config(config);
 
-    config.$inject = ['$translatePartialLoaderProvider'];
-
     /**
      * ng-starter.directives config function.
      * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
+    /* @ngInject */
     function config($translatePartialLoaderProvider) {
         $translatePartialLoaderProvider.addPart('directives');
     }

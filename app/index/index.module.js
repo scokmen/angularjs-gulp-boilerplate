@@ -9,13 +9,12 @@
 
     index.config(config);
 
-    config.$inject = ['$stateProvider', '$translatePartialLoaderProvider'];
-
     /**
      * ng-starter.index config function.
      * @param {$stateProvider} $stateProvider
      * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
+    /* @ngInject */
     function config($stateProvider, $translatePartialLoaderProvider) {
         $stateProvider
             .state('ngstarter.index', {

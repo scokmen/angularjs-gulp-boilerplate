@@ -10,12 +10,11 @@
 
     header.config(config);
 
-    config.$inject = ['$translatePartialLoaderProvider'];
-
     /**
      * ng-starter.header config function.
      * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
+    /* @ngInject */
     function config($translatePartialLoaderProvider) {
         $translatePartialLoaderProvider.addPart('header');
     }

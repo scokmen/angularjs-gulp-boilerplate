@@ -3,14 +3,13 @@
 
     angular.module('ng-starter.services').service('exceptionService', exceptionService);
 
-    exceptionService.$inject = [];
-
     /**
      * Exception service.
      * @class
      * @classdesc A angular service for handling the aplication exceptions
      * @memberOf ng-starter.services
      */
+    /* @ngInject */
     function exceptionService() {
 
         return {

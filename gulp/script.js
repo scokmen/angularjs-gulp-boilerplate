@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var stripDebug = require('gulp-strip-debug');
 var angularFilesort = require('gulp-angular-filesort');
 var templateCache = require('gulp-angular-templatecache');
+var ngAnnotate = require('gulp-ng-annotate');
 var config = require('./config');
 
 //Inject the application files into the html file.
@@ -29,6 +30,7 @@ gulp.task('scripts:prod:bundle:js', function () {
     return gulp.src(config.appFiles('js', true))
         .pipe(angularFilesort())
         .pipe(concat('app.min.js'))
+        .pipe(ngAnnotate())
         .pipe(stripDebug())
         .pipe(uglify())
         .pipe(gulp.dest(config.getDistPath()));

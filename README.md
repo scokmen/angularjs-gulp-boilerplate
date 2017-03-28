@@ -1,9 +1,12 @@
 # angularjs-gulp-boilerplate
 A simple starter angularjs (1.5.x) app with common services and gulp tasks on john papa's style guide.
 
+[![GitHub version](https://badge.fury.io/gh/scokmen%2Fangularjs-gulp-boilerplate.svg)](https://badge.fury.io/gh/scokmen%2Fangularjs-gulp-boilerplate)
 [![npm version](https://badge.fury.io/js/angularjs-gulp-boilerplate.svg)](http://badge.fury.io/js/angularjs-gulp-boilerplate)
 [![Bower version](https://badge.fury.io/bo/angularjs-gulp-boilerplate.svg)](http://badge.fury.io/bo/angularjs-gulp-boilerplate)
 [![Build Status](https://travis-ci.org/scokmen/angularjs-gulp-boilerplate.svg?branch=master)](https://travis-ci.org/scokmen/angularjs-gulp-boilerplate)
+
+[![NPM](https://nodei.co/npm/angularjs-gulp-boilerplate.png)](https://nodei.co/npm/angularjs-gulp-boilerplate/)
 
 ### Features
 - Well documented code

@@ -3,14 +3,13 @@
 
     angular.module('ng-starter.services').service('httpService', httpService);
 
-    httpService.$inject = ['$q', '$http'];
-
     /**
      * Abstraction for angular $http service.
      * @class
      * @classdesc Abstraction for angular $http service for improve controls over http calls.
      * @memberOf ng-starter.services
      */
+    /* @ngInject */
     function httpService($q, $http) {
 
         return {

@@ -3,14 +3,13 @@
 
     angular.module('ng-starter.services').service('loggerService', loggerService);
 
-    loggerService.$inject = [];
-
     /**
      * Logger service.
      * @class
      * @classdesc A angular service for logging.
      * @memberOf ng-starter.services
      */
+    /* @ngInject */
     function loggerService() {
 
         return {

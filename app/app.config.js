@@ -15,8 +15,6 @@
 
     ngStarter.config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$translateProvider', '$provide', '$logProvider', '$compileProvider'];
-
     /**
      * ng-starter application config.
      * @param {$stateProvider} $stateProvider
@@ -26,6 +24,7 @@
      * @param {$logProvider} $logProvider
      * @param {$compileProvider} $compileProvider
      */
+    /* @ngInject */
     function config($stateProvider, $urlRouterProvider, $translateProvider, $provide, $logProvider, $compileProvider) {
 
         //Disable the log messages.
@@ -46,13 +45,12 @@
         $translateProvider.preferredLanguage('en-US');
     }
 
-    registerStates.$inject = ['$stateProvider', '$urlRouterProvider'];
-
     /**
      * Register the abstract application-wide states.
      * @param {$stateProvider} $stateProvider
      * @param {$urlRouterProvider} $urlRouterProvider
      */
+    /* @ngInject */
     function registerStates($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('ngstarter', {
@@ -85,12 +83,11 @@
         $urlRouterProvider.otherwise('/index/home');
     }
 
-    exceptionHandler.$inject = ['exceptionService'];
-
     /**
      * Angular global exception handler.
      * @param {exceptionService} exceptionService
      */
+    /* @ngInject */
     function exceptionHandler(exceptionService) {
         return function (exception, cause) {
             exceptionService.handle(exception, cause);

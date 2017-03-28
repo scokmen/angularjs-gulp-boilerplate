@@ -10,12 +10,11 @@
 
     main.config(config);
 
-    config.$inject = ['$translatePartialLoaderProvider'];
-
     /**
      * ng-starter.main config function.
      * @param {$translatePartialLoaderProvider} $translatePartialLoaderProvider
      */
+    /* @ngInject */
     function config($translatePartialLoaderProvider) {
         $translatePartialLoaderProvider.addPart('main');
     }
