@@ -61,3 +61,7 @@ Html file output
 ```sh
 $ gulp jshint:html
 ```
+
+# License
+
+Copyright (c) 2016 Soner Çökmen, Licensed under the MIT license.
