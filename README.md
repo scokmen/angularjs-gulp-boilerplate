@@ -8,7 +8,21 @@ A simple starter angularjs (1.5.x) app with common services and gulp tasks on jo
 
 [![NPM](https://nodei.co/npm/angularjs-gulp-boilerplate.png)](https://nodei.co/npm/angularjs-gulp-boilerplate/)
 
-### Features
+# Installation
+
+**Bower:**
+
+```javascript
+$ bower install angularjs-gulp-boilerplate
+```
+
+**Npm:**
+
+```javascript
+$ npm install angularjs-gulp-boilerplate
+```
+
+# Features
 - Well documented code
 - Folder by feature structure
 - Module based styling with LESS
@@ -21,33 +35,24 @@ A simple starter angularjs (1.5.x) app with common services and gulp tasks on jo
 - [JsHint](http://jshint.com/) integration
 - Simple dummy bootstrap template included
 
-### Download via Npm
-```sh
-$ npm install angularjs-gulp-boilerplate
-```
-### Download via Bower
-```sh
-$ bower install angularjs-gulp-boilerplate
-```
-
-### Development build
+### Development Build
 ```sh
 $ gulp build:dev (or "npm run development")
 $ gulp server:dev
 ```
 
-### Production build
+### Production Build
 ```sh
 $ gulp build:prod (or "npm run production")
 $ gulp server:prod
 ```
 
-### JsDoc documentation
+### JsDoc Documentation
 ```sh
 $ gulp documentation (or "npm run documentation")
 ```
 
-### JsHint report
+### JsHint Report
 Console output
 ```sh
 $ gulp jshint:console
